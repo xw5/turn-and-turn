@@ -1,0 +1,45 @@
+{
+	"id": "turnAndTurn",
+	"name": "turnAndTurn",
+	"description": "变量格式转换插件",
+	"displayName": "变量格式转换",
+	"version": "0.0.1",
+	"publisher": "xiewu",
+	"engines": {
+		"HBuilderX": "^2.7.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"main": "./extension",
+	"activationEvents": [
+		"onCommand:turn_and_turn"
+	],
+	"contributes": {
+		"commands": [{
+			"command": "turn_and_turn",
+			"title": "转呀转"
+		}],
+		"menus": {
+			"editor/context": [{
+					"title":"转呀转",
+					"command": "turn_and_turn",
+					"group": "z_commands"
+				},
+				{
+					"group": "z_commands"
+				}
+			]
+		}
+	},
+	"extensionDependencies": [
+		"plugin-manager"
+	],
+	"dependencies": {},
+	"keywords": [
+	  "蛇形",
+	  "驼峰",
+	  "变量格式化",
+	  "变量转换"
+	]
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>测试</title>
+	</head>
+	<body>
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.1/lib/theme-chalk/index.css">
+		<style>
+			.row_item{
+				margin-bottom: 10px;
+			}
+			.checked_form_item{
+				margin-bottom: 0;
+			}
+			.result_example{
+				color: green;
+			}
+		</style>
+		<div id="app">
+			<el-form label-position="top" label-width="120px" :model="formCheckedModel">
+				<el-row class="row_item" :gutter="10">
+				  <el-col :span="24">
+					  <el-form-item class="checked_form_item" label="格式选择： ">
+						<el-radio-group v-model="formCheckedModel.checkedFormat">
+							<el-radio v-for="item in formatOptions" :label="item" border>{{item}}</el-radio>
+						</el-radio-group>
+					  </el-form-item>
+				  </el-col>
+				 </el-row>
+				 <el-row class="row_item" :gutter="10">
+				  <el-col :span="24">
+					  <el-form-item class="checked_form_item" label="连接符选择： ">
+						<el-radio-group v-model="formCheckedModel.checkedLinksType">
+							<el-radio v-for="item in linksTypeOptions" :label="item" border>{{item}}</el-radio>
+						</el-radio-group>
+					  </el-form-item>
+				  </el-col>
+				</el-row>
+				<el-row class="row_item" :gutter="10">
+					<el-col :span="24">
+						<p>转换结果演示： <span class="result_example">{{result}}</span></p>
+					</el-col>
+				</el-row>
+			</el-form>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+		<!-- 引入组件库 -->
+		<script src="https://unpkg.com/element-ui@2.15.1/lib/index.js"></script>
+		<script>
+			var formatOptions = ['大写', '小写', '驼峰'];
+			var linksTypeOptions = ['无', '空格','下划线', '中划线'];
+		    new Vue({
+		      el: '#app',
+		      data: function() {
+		        return {
+					formCheckedModel: {
+						checkedFormat: '大写',
+						checkedLinksType: '无'
+					},
+					formatOptions: formatOptions,
+					linksTypeOptions: linksTypeOptions
+				}
+		      },
+			  computed:{
+				  result() {
+					let {checkedFormat, checkedLinksType} = this.formCheckedModel;
+					let testa = 'aa';
+					let testb = 'bb';
+					let link = '';
+					if (checkedFormat === '大写') {
+						testa = 'AA';
+						testb = 'BB';
+					} else if(checkedFormat === '小写') {
+						testa = 'aa';
+						testb = 'bb';
+					} else {
+						testa = 'aa';
+						testb = 'Bb';
+					}
+					if (checkedLinksType === '无') {
+						link = '';
+					} else if (checkedLinksType === '空格') {
+						link =  ' ';
+					} else if (checkedLinksType === '下划线') {
+						link =  '_';
+					} else if (checkedLinksType === '中划线') {
+						link =  '-';
+					}
+					return testa + link + testb;
+				  }
+			  }
+		    })
+		  </script>
+	</body>
+</html>
