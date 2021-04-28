@@ -1,12 +1,12 @@
 {
-	"id": "turnAndTurn",
-	"name": "turnAndTurn",
-	"description": "变量格式转换插件",
+	"id": "turn-and-turn",
+	"name": "turn-and-turn",
+	"description": "变量格式转换插件，转大小写，驼峰，蛇形，中划线",
 	"displayName": "变量格式转换",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "xiewu",
 	"engines": {
-		"HBuilderX": "^2.7.0"
+		"HBuilderX": "^2.8.0"
 	},
 	"categories": [
 		"Other"
@@ -35,11 +35,27 @@
 	"extensionDependencies": [
 		"plugin-manager"
 	],
+	"repository": "https://gitee.com/github-9819409/turn-and-turn",
 	"dependencies": {},
 	"keywords": [
-	  "蛇形",
-	  "驼峰",
-	  "变量格式化",
-	  "变量转换"
-	]
+        "蛇形",
+        "驼峰",
+        "变量格式化",
+        "变量转换"
+    ],
+    "dcloudext": {
+        "category": [
+            "HBuilderX",
+            "HBuilderX"
+        ],
+        "contact": {
+            "qq": ""
+        },
+        "declaration": {
+            "ads": "无",
+            "data": "无",
+            "permissions": "无"
+        },
+        "npmurl": ""
+    }
 }
