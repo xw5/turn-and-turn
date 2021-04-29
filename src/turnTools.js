@@ -1,3 +1,4 @@
+const splitSymbol = [' ', '-', '_'];
 /**
  * 字符串边界分割
  * @param {String} str
@@ -6,19 +7,16 @@ function strSplit(str) {
 	if (!str){
 		return [];
 	}
-	strArr = str.split(/[\b\s\_\-]+/g);
+	strArr = str.split(/([\b\s\_\-]+)|(?=[A-Z])/);
 	if (strArr.length == 0) {
 		return [];
-	}
-	if (strArr.length == 1) {
-		strArr = str.split(/(?=[A-Z])/);
 	}
 	if (strArr.length == 1) {
 		strArr = str.split('');
 	}
 	console.log('--strSplit1--:', strArr);
 	return strArr.filter((item) => {
-		return item != undefined;
+		return item != undefined && splitSymbol.indexOf(item) == -1;
 	})
 }
 

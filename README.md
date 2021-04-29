@@ -3,7 +3,7 @@
 
 ## 插件说明
 * 插件支持变量转驼峰，转大写，转小写，蛇形，中划线等格式
-* 目前支持的最终格式有：aabb AABB aa_bb AA_BB aa_BB aa-bb AA-BB aa-BB
+* 目前支持的最终格式有：aabb AABB aa_bb AA_BB aa_Bb aa-bb AA-BB aa-Bb
 
 ## 使用方式
 1. 选中要执行转换的变量
