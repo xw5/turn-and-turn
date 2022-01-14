@@ -1,5 +1,7 @@
 const hx = require('hbuilderx');
 const textEditor = require('./textEditor.js');
+const path = require('path');
+
 /**
  * @description hx.window.createWebViewDialog
  */
@@ -16,12 +18,14 @@ function WebviewDialog() {
     }, {
         enableScripts: true
     });
-
     let webview = webviewDialog.webView;
+		let elementUiCss = path.join(__dirname, "../lib/index.css");
+		let elementUiJs = path.join(__dirname, "../lib/index.js");
+		let vueJs = path.join(__dirname, "../lib/vue@2.6.12.js");
     webview.html =`
         	<body>
         		<!-- 引入样式 -->
-        		<link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.1/lib/theme-chalk/index.css">
+        		<link rel="stylesheet" href="${elementUiCss}">
         		<style>
         			.row_item{
         				margin-bottom: 10px;
@@ -60,9 +64,9 @@ function WebviewDialog() {
         				</el-row>
         			</el-form>
         		</div>
-        		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+        		<script src="${vueJs}"></script>
         		<!-- 引入组件库 -->
-        		<script src="https://unpkg.com/element-ui@2.15.1/lib/index.js"></script>
+        		<script src="${elementUiJs}"></script>
         		<script>
         			var formatOptions = ['大写', '小写', '驼峰'];
         			var linksTypeOptions = ['无', '空格','下划线', '中划线'];
