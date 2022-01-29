@@ -14,7 +14,6 @@ function strSplit(str) {
 	if (strArr.length == 1) {
 		strArr = str.split('');
 	}
-	console.log('--strSplit1--:', strArr);
 	return strArr.filter((item) => {
 		return item != undefined && splitSymbol.indexOf(item) == -1;
 	})
