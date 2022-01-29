@@ -24,14 +24,15 @@ function strSplit(str) {
  * 驼峰写法
  * @param {String} str
  * @param {String} Connector
+ * @param {String} type lower 小写 upper大写
  */
-function hump(str, Connector) {
+function hump(str, Connector, type) {
 	var strArr = strSplit(str);
 	if (strArr.length === 0) {
 		return '';
 	}
 	var strArrResult = strArr.map((item, index) => {
-		if (index == 0) {
+		if (index == 0 && type === 'lower') {
 			return item.toLowerCase();
 		}
 		return item.substring(0, 1).toUpperCase() + item.substring(1);

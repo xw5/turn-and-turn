@@ -66,32 +66,32 @@
 		      },
 			  computed:{
 				  result() {
-					let {checkedFormat, checkedLinksType} = this.formCheckedModel;
-					let testa = 'aa';
-					let testb = 'bb';
-					let link = '';
-					if (checkedFormat === '大写') {
-						testa = 'AA';
-						testb = 'BB';
-					} else if(checkedFormat === '小写') {
-						testa = 'aa';
-						testb = 'bb';
-					} else {
-						testa = 'aa';
-						testb = 'Bb';
+						let {checkedFormat, checkedLinksType} = this.formCheckedModel;
+						let testa = 'aa';
+						let testb = 'bb';
+						let link = '';
+						if (checkedFormat === '大写') {
+							testa = 'AA';
+							testb = 'BB';
+						} else if(checkedFormat === '小写') {
+							testa = 'aa';
+							testb = 'bb';
+						} else {
+							testa = 'aa';
+							testb = 'Bb';
+						}
+						if (checkedLinksType === '无') {
+							link = '';
+						} else if (checkedLinksType === '空格') {
+							link =  ' ';
+						} else if (checkedLinksType === '下划线') {
+							link =  '_';
+						} else if (checkedLinksType === '中划线') {
+							link =  '-';
+						}
+						return testa + link + testb;
+						}
 					}
-					if (checkedLinksType === '无') {
-						link = '';
-					} else if (checkedLinksType === '空格') {
-						link =  ' ';
-					} else if (checkedLinksType === '下划线') {
-						link =  '_';
-					} else if (checkedLinksType === '中划线') {
-						link =  '-';
-					}
-					return testa + link + testb;
-				  }
-			  }
 		    })
 		  </script>
 	</body>

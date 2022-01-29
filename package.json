@@ -3,7 +3,7 @@
 	"name": "turn-and-turn",
 	"description": "变量格式转换插件，转大小写，驼峰，蛇形，中划线",
 	"displayName": "变量格式转换",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"publisher": "xiewu",
 	"engines": {
 		"HBuilderX": "^2.8.0"

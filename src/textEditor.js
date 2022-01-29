@@ -14,7 +14,8 @@ function textEditor(model, connector) {
 		} else if (model.checkedFormat === '小写') {
 			result = exchangeTools.lowercase(word, connector);
 		} else {
-			result = exchangeTools.hump(word, connector);
+			const type = model.checkedFormat === '小写坨峰' ? 'lower' : 'upper'
+			result = exchangeTools.hump(word, connector, type);
 		}
 		editor.edit(editBuilder => {
 			editBuilder.replace(selection,result);
