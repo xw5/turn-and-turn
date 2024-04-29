@@ -1,9 +1,9 @@
 {
-	"id": "turn-and-turn",
+	"id": "hbxw-turn-and-turn",
 	"name": "turn-and-turn",
 	"description": "变量格式转换插件，转大小写，驼峰，蛇形，中划线",
 	"displayName": "变量格式转换",
-	"version": "0.0.6",
+	"version": "1.0.1",
 	"publisher": "xiewu",
 	"engines": {
 		"HBuilderX": "^2.8.0"
@@ -13,23 +13,48 @@
 	],
 	"main": "./extension",
 	"activationEvents": [
-		"onCommand:turn_and_turn"
+		"onCommand:turn_and_turn.start",
+		"onCommand:turn_and_turn.about"
 	],
 	"contributes": {
-		"commands": [{
-			"command": "turn_and_turn",
-			"title": "转呀转"
-		}],
+		"commands": [
+			{
+				"command": "turn_and_turn.start",
+				"title": "变量格式转换"
+			},{
+				"command": "turn_and_turn.about",
+				"title": "关于/评价"
+			}
+		],
+		"keybindings": [
+		  {
+		    "key": "ctrl+shift+alt+t",
+				"macosx": "command+shift+alt+t",
+		    "command": "turn_and_turn.start",
+		    "when": "editorTextFocus"
+		  }
+		],
 		"menus": {
 			"editor/context": [{
-					"title":"转呀转",
-					"command": "turn_and_turn",
-					"group": "z_commands"
-				},
-				{
-					"group": "z_commands"
-				}
-			]
+				"title":"变量格式转换",
+				"command": "turn_and_turn.start",
+				"group": "z_commands"
+			}],
+			"menubar/tool": [{
+				"title": "变量格式转换",
+				"group": "ext_settings",
+				"id": "turn_and_turn"
+			}, {
+				"command": "turn_and_turn.start",
+				"title": "启动格式转换",
+				"group": "turn_and_turn@1"
+			}, {
+				"group": "turn_and_turn@2"
+			}, {
+				"command": "turn_and_turn.about",
+				"title": "关于/评价",
+				"group": "turn_and_turn@3"
+			}]
 		}
 	},
 	"extensionDependencies": [
@@ -40,22 +65,20 @@
 	"keywords": [
         "蛇形",
         "驼峰",
+        "大写",
         "变量格式化",
         "变量转换"
     ],
     "dcloudext": {
-        "category": [
-            "HBuilderX",
-            "HBuilderX"
-        ],
         "contact": {
             "qq": ""
         },
         "declaration": {
             "ads": "无",
-            "data": "无",
+            "data": "插件不采集任何数据",
             "permissions": "无"
         },
-        "npmurl": ""
+        "npmurl": "",
+        "type": "hbuilderx"
     }
 }
